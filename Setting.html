@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting-animation</title>
+
+    <style> 
+        body{
+            background-color: #198;
+        }
+        .parent{
+            display: flex;
+            height: 500px;
+        }
+        .gear{
+            position: relative;
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 50%;
+            animation-name: spin; 
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .gear .center{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 10;
+            width: 100px;
+            height: 100px;
+            background-color: #198;
+            border-radius: 50%;
+        }
+
+        .teath{
+            position: absolute;
+            top: -25px;
+            right: 75px;
+            z-index: 1;
+            height: 250px;
+            width: 45px;
+            background-color: #fff;
+
+        }
+        .teath:nth-child(2){
+            transform: rotate(45deg);
+        }
+        .teath:nth-child(3){
+            transform: rotate(90deg);
+        }
+        .teath:nth-child(4){
+            transform: rotate(135deg);
+        }
+
+        @keyframes spin{
+            from {transform: rotate(0deg);}
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="gear">
+            <div class="center"></div>
+            <div class="teath"></div>
+            <div class="teath"></div>
+            <div class="teath"></div>
+            <div class="teath"></div>
+
+        </div>
+    </div>
+</body>
+</html>
